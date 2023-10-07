@@ -80,7 +80,7 @@ const getSwipeDirection = (property) => {
 
 // must be created outside of the TinderCard forwardRef
 const AnimatedDiv = animated.div
-
+console.log("animated div", AnimatedDiv);
 const TinderCard = React.forwardRef(
   (
     { flickOnSwipe = true, children, onSwipe, onCardLeftScreen, className, preventSwipe = [], swipeRequirementType = 'velocity', swipeThreshold = settings.swipeThreshold, onSwipeRequirementFulfilled, onSwipeRequirementUnfulfilled },
@@ -117,6 +117,7 @@ const TinderCard = React.forwardRef(
 
     const handleSwipeReleased = React.useCallback(
       async (setSpringTarget, gesture) => {
+         console.log("Swipe released ...");
         // Check if this is a swipe
         const dir = getSwipeDirection({
           x: swipeRequirementType === 'velocity' ? gesture.vx : gesture.dx,
