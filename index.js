@@ -125,6 +125,7 @@ const TinderCard = React.forwardRef(
 
         if (dir !== 'none') {
           if (flickOnSwipe) {
+            console.log("i am ready to get swiped off");
             if (!preventSwipe.includes(dir)) {
               if (onSwipe) onSwipe(dir)
 
